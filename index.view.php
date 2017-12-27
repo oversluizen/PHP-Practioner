@@ -6,20 +6,16 @@
     </head>
     <body>
         
-        <h1>Task for the day</h1>
-            <ul>
+        <ul>
+            <?php foreach ($tasks as $task) : ?>
                 <li>
-                    <strong>Name: </strong> <?=$task['title']; ?>
+                    <?php if ($task->isComplete()) : ?>
+                        <strike><?= $task->description; ?> </strike>
+                    <?php else : ?>
+                        <?= $task->description; ?> 
+                    <?php endif; ?>
                 </li>
-                <li>
-                    <strong>Due date: </strong> <?= $task['due']; ?>
-                </li>
-                <li>
-                    <strong>Person responsible: </strong><?= $task['assigned_to']?>
-                </li>
-                <li>
-                    <strong>Status: </strong><?= $task['completed'] ? 'Complete' : 'Incomplete' ?>
-                </li>
-            </ul>
+            <?php endforeach; ?>
+    </ul>
     </body>
 </html>
