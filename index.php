@@ -1,13 +1,9 @@
 <?php
-$person = [
-    'age' => 44,
-    'hair' => 'brown',
-    'career' => 'pastor'
+$task = [
+    'title' => 'Finish homework',
+    'due' => 'Today',
+    'assigned_to' => 'Jaco',
+    'completed' => false
 ];
-
-$person ['name'] = 'Jaco';
-echo '<pre>';
-die(var_dump($person));
-echo '</pre>';
 
 require 'index.view.php';

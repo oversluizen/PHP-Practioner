@@ -5,10 +5,21 @@
         <title>Document</title>
     </head>
     <body>
-        <ul>
-            <?php foreach ($person as $feature => $val) : ?>
-               <li><strong><?= $feature;?></strong> <?= $val; ?></li>
-            <?php endforeach ?>
-        </ul>
+        
+        <h1>Task for the day</h1>
+            <ul>
+                <li>
+                    <strong>Name: </strong> <?=$task['title']; ?>
+                </li>
+                <li>
+                    <strong>Due date: </strong> <?= $task['due']; ?>
+                </li>
+                <li>
+                    <strong>Person responsible: </strong><?= $task['assigned_to']?>
+                </li>
+                <li>
+                    <strong>Status: </strong><?= $task['completed'] ? 'Complete' : 'Incomplete' ?>
+                </li>
+            </ul>
     </body>
 </html>
